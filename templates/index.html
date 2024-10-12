@@ -1,0 +1,51 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Book Catalog</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">  
+</head>  
+<body>  
+    <section class="section">  
+        <div class="container">  
+            <h1 class="title">Book Catalog</h1>  
+            <a href="{{ url_for('add_book') }}" class="button is-primary">Add Book</a>  
+            <a href="{{ url_for('search_books') }}" class="button is-link">Search Books</a>  
+            <hr>  
+            <table class="table is-striped is-hoverable is-fullwidth">  
+                <thead>  
+                    <tr>  
+                        <th>Title</th>  
+                        <th>Author</th>  
+                        <th>Year</th>  
+                        <th>Genre</th>  
+                        <th>Actions</th>  
+                    </tr>  
+                </thead>  
+                <tbody>  
+                    {% for book in books %}  
+                    <tr>  
+                        <td>{{ book.title }}</td>  
+                        <td>{{ book.author }}</td>  
+                        <td>{{ book.year }}</td>  
+                        <td>{{ book.genre }}</td>  
+                        <td>  
+                            <a href="{{ url_for('edit_book', book_id=book.id) }}" class="button is-small is-link">Edit</a>  
+                            <a href="{{ url_for('delete_book', book_id=book.id) }}" class="button is-small is-danger">Delete</a>  
+                        </td>  
+                    </tr>  
+                    {% endfor %}  
+                </tbody>  
+            </table>  
+        </div> 
+    </section>
+<footer class="footer">  
+    <div class="content has-text-centered">  
+        <p>By BuZA</p>  
+        <p>  
+            WhatsApp <a href="https://wa.me/qr/SJSNPV7XSAJTA1"> BuZA team</a> * Mail <a href="mailto:snow_queen_3@bk.ru">BuZA team</a>  
+        </p>  
+    </div>  
+</footer> 
+</body>  
+</html>

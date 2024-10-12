@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Edit Book</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">  
+</head>  
+<body>  
+    <section class="section">  
+        <div class="container">  
+            <h1 class="title">Edit Book</h1>  
+            <form action="{{ url_for('update_book', book_id=book.id) }}" method="post">  
+                <div class="field">  
+                    <label class="label">Title</label>  
+                    <div class="control">  
+                        <input class="input" type="text" name="title" value="{{ book.title }}" required>  
+                    </div>  
+                </div>  
+                <div class="field">  
+                    <label class="label">Author</label>  
+                    <div class="control">  
+                        <input class="input" type="text" name="author" value="{{ book.author }}" required>  
+                    </div>  
+                </div>  
+                <div class="field">  
+                    <label class="label">Year</label>  
+                    <div class="control">  
+                        <input class="input" type="number" name="year" value="{{ book.year }}" required>  
+                    </div>  
+                </div>  
+                <div class="field">  
+                    <label class="label">Genre</label>  
+                    <div class="control">  
+                        <input class="input" type="text" name="genre" value="{{ book.genre }}" required>  
+                    </div>  
+                </div>  
+                <div class="field is-grouped">  
+                    <div class="control">  
+                        <button class="button is-link" type="submit">Update Book</button>  
+                    </div>  
+                    <div class="control">  
+                        <a href="{{ url_for('index') }}" class="button is-light">Cancel</a>  
+                    </div>  
+                </div>  
+            </form>  
+        </div>  
+    </section> 
+<footer class="footer">  
+    <div class="content has-text-centered">  
+        <p>By BuZA</p>  
+        <p>  
+            For inquiries, please contact us at <a href="mailto:snow_queen_3@bk.ru">snow_queen_3@bk.ru</a>  
+        </p>  
+        <p>  
+           WhatsApp <a href="https://wa.me/qr/SJSNPV7XSAJTA1"> BuZA team</a>  
+        </p>  
+    </div>  
+</footer> 
+</body>  
+</html>
